@@ -13,10 +13,6 @@ public class StringCalculator {
 
     public StringCalculator(String input) {
 
-        if (null == input) {
-            throw new IllegalArgumentException("Null Or Empty.");
-        }
-
         this.input = input;
         this.inputArray = input.split(SEPARATOR);
 

@@ -21,33 +21,33 @@ public class InputCheck {
 
     }
 
-    public static void checkEmpty(String input, String separator) throws IllegalArgumentException {
+    private static void checkEmpty(String input, String separator) throws IllegalArgumentException {
         // null , empty
         if (input == null || input.length() == 0 || input.replaceAll(separator, "").isEmpty()) {
             throw new IllegalArgumentException("Null Or Empty.");
         }
     }
 
-    public static void checkMinimumExpression(String[] inputArray) throws IllegalArgumentException {
+    private static void checkMinimumExpression(String[] inputArray) throws IllegalArgumentException {
         if (inputArray.length < MINIMUM_EXPRESSION_SIZE) {
             throw new IllegalArgumentException("Less of Minimum Calculate Expression.");
         }
 
     }
 
-    public static void checkMatchingNumbersAndOperators(String[] inputArray) throws IllegalArgumentException {
+    private static void checkMatchingNumbersAndOperators(String[] inputArray) throws IllegalArgumentException {
         if (inputArray.length % CONDITION_OF_EXPRESSION == 0) {
             throw new IllegalArgumentException("Unmatched Numbers with Operators");
         }
     }
 
-    public static void checkNumberString(String[] inputArray) {
+    private static void checkNumberString(String[] inputArray) {
         for (int i = 0; i < inputArray.length; i += STEP_OF_NUMBER_AND_SYMBOL) {
             checkNumberString(inputArray[i]);
         }
     }
 
-    public static void checkCalculateSymbol(String[] inputArray) {
+    private static void checkCalculateSymbol(String[] inputArray) {
         for (int i = 1; i < inputArray.length; i += STEP_OF_NUMBER_AND_SYMBOL) {
             checkCalculateSymbol(inputArray[i]);
         }
